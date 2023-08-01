@@ -40,6 +40,7 @@ export default {
   margin-right: 20px;
   font-size: 20px;
 }
+
 .navigation__menu > a {
   text-decoration: none;
   color: white;
