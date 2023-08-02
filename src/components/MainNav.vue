@@ -6,8 +6,7 @@
     <div class="navigation__menu">
       <a href="">Job Search</a>
       <a href="">Testimonials</a>
-      <a href="">Sign In</a>
-      <a href="">Sign Up</a>
+      <router-link to="/signin"><a href="">Sign In / Sign Up</a></router-link>
     </div>
   </nav>
 </template>
@@ -44,29 +43,5 @@ export default {
 .navigation__menu > a {
   text-decoration: none;
   color: white;
-}
-
-header {
-  width: 100%;
-  height: 500px;
-  background-image: url('../assets/job.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: relative;
-}
-
-.header__title {
-  position: absolute;
-  top: 7rem;
-  left: 3rem;
-  letter-spacing: 3;
-  font-weight: bolder;
-  font-size: 50px;
-  color: white;
-  text-shadow: 4px 2px 0px rgba(0, 0, 0, 0.2);
-}
-.header__title > span {
-  color: chartreuse;
 }
 </style>

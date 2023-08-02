@@ -3,6 +3,8 @@
     <input type="email" required placeholder="email" v-model="email" />
     <input type="password" required placeholder="password" v-model="password" />
     <button>Log in</button>
+    <br />
+    <button @click="googleSignIn">Sign In with Google</button>
   </form>
 </template>
 
@@ -11,6 +13,7 @@ import { ref } from 'vue'
 
 export default {
   setup() {
+    // refs
     const email = ref('')
     const password = ref('')
 
