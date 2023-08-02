@@ -1,20 +1,8 @@
 <template>
-  <MainNav />
-  <Header />
+  <router-view />
 </template>
 
-<script>
-import MainNav from '@/components/MainNav.vue'
-import Header from '@/components/Header.vue'
-
-export default {
-  name: 'App',
-  components: {
-    MainNav,
-    Header
-  }
-}
-</script>
+<script></script>
 <style>
 * {
   margin: 0;

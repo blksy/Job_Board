@@ -6,8 +6,7 @@
     <div class="navigation__menu">
       <a href="">Job Search</a>
       <a href="">Testimonials</a>
-      <a href="">Sign In</a>
-      <a href="">Sign Up</a>
+      <router-link to="/signin"><a href="">Sign In / Sign Up</a></router-link>
     </div>
   </nav>
 </template>
@@ -40,6 +39,7 @@ export default {
   margin-right: 20px;
   font-size: 20px;
 }
+
 .navigation__menu > a {
   text-decoration: none;
   color: white;
