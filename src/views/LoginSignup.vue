@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="login container">
     <div v-if="showLogin">
       <h2>Login</h2>
       <LoginForm />
@@ -28,36 +28,33 @@ export default {
 }
 </script>
 <style>
-h2 {
-  padding-top: 20px;
-}
-.container {
+.login {
   text-align: center;
   padding: 20px 0;
-  height: 500px;
 }
-.container form {
-  width: 400px;
-  height: 300px;
-  margin: 30px auto;
+.login form {
+  width: 300px;
+  margin: 20px auto;
 }
-.container input {
+.login label {
+  display: block;
+  margin: 20px 0 10px;
+}
+.login input {
   width: 100%;
   padding: 10px;
   border-radius: 20px;
   border: 1px solid #eee;
   outline: none;
-  color: black;
+  color: #999;
   margin: 10px auto;
 }
-.container span {
+.login span {
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
 }
-.container button {
-  margin: 30px auto;
-  width: 200px;
-  height: 50px;
+.login button {
+  margin: 20px auto;
 }
 </style>

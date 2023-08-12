@@ -2,6 +2,7 @@
   <form @submit.prevent="handleSubmit">
     <input type="email" required placeholder="email" v-model="email" />
     <input type="password" required placeholder="password" v-model="password" />
+    <div class="error">{{ error }}</div>
     <button>Log in</button>
     <br />
     <button @click="googleSignIn">Sign In with Google</button>
@@ -29,7 +30,7 @@ export default {
       }
     }
 
-    return { email, password, handleSubmit }
+    return { email, password, handleSubmit, error }
   }
 }
 </script>
