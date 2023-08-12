@@ -12,21 +12,19 @@
 <script>
 import { ref } from 'vue'
 import useLogin from '../composables/useLogin'
-import { useRouter } from 'vue-router'
 
 export default {
-  setup() {
+  setup(props, context) {
     // refs
     const email = ref('')
     const password = ref('')
-    const router = useRouter()
     const { error, login } = useLogin()
 
     const handleSubmit = async () => {
       await login(email.value, password.value)
-      router.push('/profile')
       if (!error.value) {
-        console.log('successful login')
+        context.emit('login')
+        // console.log('successful login')
       }
     }
 
