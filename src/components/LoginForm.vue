@@ -4,8 +4,6 @@
     <input type="password" required placeholder="password" v-model="password" />
     <div class="error">{{ error }}</div>
     <button>Log in</button>
-    <br />
-    <button @click="googleSignIn">Sign In with Google</button>
   </form>
 </template>
 
