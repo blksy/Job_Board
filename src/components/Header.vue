@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import JobSearch from './JobSearchForm.vue'
+import JobSearch from './JobSearchInput.vue'
 export default {
   components: {
     JobSearch
