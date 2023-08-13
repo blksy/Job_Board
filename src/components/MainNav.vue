@@ -4,7 +4,7 @@
       <img src="../assets/logo.png" alt="" />
     </h2>
     <div class="navigation__menu">
-      <router-link to="/jobsearch"><a href="">Job Search</a></router-link>
+      <router-link to="/jobsresults"><a href="">Job Search</a></router-link>
       <router-link to="/testimonials"><a href="">Testimonials</a></router-link>
       <router-link to="/signin"><button>Sign In / Sign Up</button></router-link>
     </div>

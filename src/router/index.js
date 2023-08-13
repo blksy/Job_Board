@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '../views/MainView.vue'
 import LogingSignup from '../views/LoginSignup.vue'
 import UserProfile from '../views/UserProfile.vue'
-import JobSearch from '../views/JobSearch.vue'
+import JobResults from '../views/JobResults.vue'
 import Testimonials from '../views/Testimonials.vue'
 
 const routes = [
@@ -22,9 +22,9 @@ const routes = [
     component: UserProfile
   },
   {
-    path: '/jobsearch',
-    name: 'JobSearch',
-    component: JobSearch
+    path: '/jobsresults',
+    name: 'JobResults',
+    component: JobResults
   },
   {
     path: '/testimonials',
