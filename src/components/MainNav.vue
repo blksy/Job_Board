@@ -4,9 +4,9 @@
       <img src="../assets/logo.png" alt="" />
     </h2>
     <div class="navigation__menu">
-      <a href="">Job Search</a>
-      <a href="">Testimonials</a>
-      <router-link to="/signin"><a href="">Sign In / Sign Up</a></router-link>
+      <router-link to="/jobsearch"><a href="">Job Search</a></router-link>
+      <router-link to="/testimonials"><a href="">Testimonials</a></router-link>
+      <router-link to="/signin"><button>Sign In / Sign Up</button></router-link>
     </div>
   </nav>
 </template>
@@ -32,16 +32,31 @@ export default {
   border-bottom: 1px solid black;
 }
 .navigation__menu {
-  width: 400px;
+  width: 450px;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   margin-right: 20px;
   font-size: 20px;
+  padding-bottom: 20px;
 }
 
 .navigation__menu > a {
   text-decoration: none;
   color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: greenyellow;
+  cursor: pointer;
+}
+button {
+  border: 2px solid white;
+  margin-top: -10px;
+  font-size: 15px;
 }
 </style>

@@ -5,11 +5,15 @@
       JOB TODAY
     </h1>
   </header>
+  <JobSearch />
 </template>
 
 <script>
+import JobSearch from './JobSearchForm.vue'
 export default {
-  name: 'Header'
+  components: {
+    JobSearch
+  }
 }
 </script>
 
