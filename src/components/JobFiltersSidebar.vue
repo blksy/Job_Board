@@ -10,7 +10,7 @@ export default {
 .sidebar {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid black;
+  border-right: 1px solid gainsboro;
   background-color: white;
   padding: 16px;
   width: 384px;

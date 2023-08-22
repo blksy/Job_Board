@@ -3,6 +3,7 @@ import MainView from '../views/MainView.vue'
 import LogingSignup from '../views/LoginSignup.vue'
 import UserProfile from '../views/UserProfile.vue'
 import JobResults from '../views/JobResults.vue'
+import JobView from '../views/JobView.vue'
 import Testimonials from '../views/Testimonials.vue'
 
 const routes = [
@@ -22,7 +23,7 @@ const routes = [
     component: UserProfile
   },
   {
-    path: '/jobsresults',
+    path: '/jobs/results',
     name: 'JobResults',
     component: JobResults
   },
@@ -30,6 +31,11 @@ const routes = [
     path: '/testimonials',
     name: 'Testimonials',
     component: Testimonials
+  },
+  {
+    path: '/jobs/results/:id',
+    name: 'SingleJobView',
+    component: JobView
   }
 ]
 

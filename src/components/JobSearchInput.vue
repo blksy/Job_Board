@@ -1,17 +1,27 @@
 <template>
-  <div class="search-wrapper">
-    <div class="search-box">
-      <div class="search-card">
-        <input type="text" class="search-input" placeholder="Job title or keywords" />
-        <button class="search-button">Search</button>
+  <form @submit.prevent="searchForJobs">
+    <div class="search-wrapper">
+      <div class="search-box">
+        <div class="search-card">
+          <input type="text" class="search-input" placeholder="Job title or keywords" />
+          <button class="search-button">Search</button>
+        </div>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
+import { useRouter } from 'vue-router'
 export default {
-  name: 'JobSearchForm'
+  setup() {
+    const router = useRouter()
+
+    const searchForJobs = () => {
+      router.push({ name: 'JobResults' })
+    }
+    return { searchForJobs }
+  }
 }
 </script>
 
