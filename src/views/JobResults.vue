@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <job-filter-sidebar />
     <job-listings />
   </div>
@@ -14,4 +14,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+</style>
