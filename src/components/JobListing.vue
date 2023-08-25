@@ -4,13 +4,13 @@
       <li class="list-item">
         <router-link to="/jobs/results/1" class="link">
           <div class="job-box">
-            <h2 class="job-title">Technical Program Manager, Perception, Augmented Reality</h2>
+            <h2 class="job-title">{{ job.title }}</h2>
             <div class="job-content">
               <div>
-                <span>Company name</span>
+                <span>{{ job.company }}</span>
               </div>
               <div>
-                <span>San Francisco, CA, USA</span>
+                <span>{{ job.location }}</span>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="expand">
-              <router-link to="/jobs/results/1" style="color: blue; text-decoration: none"
+              <router-link :to="jobPageLink" style="color: blue; text-decoration: none"
                 >Expand</router-link
               >
             </div>
@@ -38,7 +38,18 @@
 </template>
 <script>
 export default {
-  name: 'JobsListings'
+  name: 'JobsListings',
+  props: {
+    job: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    jobPageLink() {
+      return `/jobs/results/${this.job.id}`
+    }
+  }
 }
 </script>
 <style>
