@@ -20,9 +20,6 @@ export default {
 .main-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   width: 100%;
-  padding: 0;
-  margin: 0;
 }
 </style>
