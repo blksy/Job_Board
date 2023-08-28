@@ -1,4 +1,5 @@
 <template>
+  <MainNav />
   <div class="main-container">
     <job-filter-sidebar />
     <job-listings />
@@ -6,10 +7,11 @@
 </template>
 
 <script>
+import MainNav from '../components/MainNav.vue'
 import JobFilterSidebar from '../components/JobFiltersSidebar.vue'
 import JobListings from '../components/JobListings.vue'
 export default {
-  components: { JobFilterSidebar, JobListings },
+  components: { JobFilterSidebar, JobListings, MainNav },
   setup() {}
 }
 </script>

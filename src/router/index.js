@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '../views/MainView.vue'
 import LogingSignup from '../views/LoginSignup.vue'
+import LoginForm from '../components/LoginForm.vue'
+import SignupForm from '../components/SignupForm.vue'
 import UserProfile from '../views/UserProfile.vue'
 import JobResults from '../views/JobResults.vue'
 import JobView from '../views/JobView.vue'
