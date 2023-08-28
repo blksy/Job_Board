@@ -3,12 +3,12 @@
     <div v-if="showLogin">
       <h2>Login</h2>
       <LoginForm @login="redicrectToProfile" />
-      <p>No account yet? <span @click="showLogin = false">Signup</span> instead.</p>
+      <p>No account yet? <span @click="showLogin = false">Signup</span>instead.</p>
     </div>
     <div v-else>
       <h2>Sign up</h2>
       <SignupForm @signup="redicrectToProfile" />
-      <p>Already registered? <span @click="showLogin = true">Login</span> instead.</p>
+      <p>Already registered? <span @click="showLogin = true">Login</span>instead.</p>
     </div>
   </div>
 </template>
