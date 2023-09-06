@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { projectAuth } from '../firebase/config'
-import { useRouter } from 'vue-router'
+
 const error = ref(null)
 
 const login = async (email, password) => {

@@ -2,7 +2,7 @@
   <main class="listing">
     <ol>
       <li class="list-item">
-        <router-link to="/jobs/results/1" class="link">
+        <router-link :to="jobPageLink" class="link">
           <div class="job-box">
             <h2 class="job-title">{{ job.title }}</h2>
             <div class="job-content">
@@ -39,12 +39,7 @@
 <script>
 export default {
   name: 'JobsListings',
-  props: {
-    job: {
-      type: Object,
-      required: true
-    }
-  },
+
   computed: {
     jobPageLink() {
       return `/jobs/results/${this.job.id}`
