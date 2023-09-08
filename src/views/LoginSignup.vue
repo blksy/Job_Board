@@ -1,4 +1,5 @@
 <template>
+  <MainNav />
   <div class="login container">
     <div v-if="showLogin">
       <h2>Login</h2>
@@ -18,9 +19,10 @@ import SignupForm from '../components/SignupForm.vue'
 import LoginForm from '../components/LoginForm.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import MainNav from '../components/MainNav.vue'
 
 export default {
-  components: { SignupForm, LoginForm },
+  components: { SignupForm, LoginForm, MainNav },
   setup() {
     const showLogin = ref(true)
     const router = useRouter()
