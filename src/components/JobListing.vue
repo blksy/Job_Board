@@ -7,23 +7,16 @@
             <h2 class="job-title">{{ job.title }}</h2>
             <div class="job-content">
               <div>
-                <span>{{ job.company }}</span>
+                <span class="company">Company: {{ job.company.display_name }}</span>
               </div>
               <div>
-                <span>{{ job.location }}</span>
+                <span class="location">Location: {{ job.location.area.toString() }}</span>
               </div>
             </div>
           </div>
           <div class="qualifications-box">
             <div>
-              <h3>Qualifications</h3>
-              <div>
-                <ul class="qualifications-list">
-                  <li>Bachelor's degree</li>
-                  <li>5 years of experience in program management</li>
-                  <li>Experience analyzing data through querying database (e.g., SQL)</li>
-                </ul>
-              </div>
+              <p>{{ job.description }}</p>
             </div>
             <div class="expand">
               <router-link :to="jobPageLink" style="color: blue; text-decoration: none"
@@ -103,21 +96,30 @@ span {
   display: flex;
   flex-direction: row;
   vertical-align: middle;
+  gap: 10px;
 }
 .qualifications-box {
-  padding: 10px 32px 18px 32px;
+  padding: 18px 32px 18px 32px;
 }
 h3 {
   margin-bottom: 8px;
   margin-top: 4px;
 }
 .qualifications-list {
-  list-style-type: disc;
   padding-left: 32px;
+  font-size: 10px;
 }
 
 .expand {
   margin-top: 0.5rem;
   text-align: center;
+}
+.company {
+  font-weight: bold;
+  font-size: 18px;
+}
+.location {
+  font-weight: bold;
+  font-size: 18px;
 }
 </style>
