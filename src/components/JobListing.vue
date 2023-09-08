@@ -39,11 +39,16 @@
 <script>
 export default {
   name: 'JobsListings',
-
+  props: {
+    job: Object
+  },
   computed: {
     jobPageLink() {
-      return `/jobs/results/${this.job.id}`
+      return this.job ? `/jobs/results/${this.job.id}` : ''
     }
+  },
+  mounted() {
+    console.log('MOUNTED')
   }
 }
 </script>

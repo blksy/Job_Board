@@ -1,19 +1,24 @@
 <template>
   <main class="main">
-    <ol>
-      <job-listing v-for="job in jobs" :key="job.id" />
+    <ol :ref="'list'">
+      <template v-for="job in jobs" :key="job.id">
+        <JobListing :job="job" />
+      </template>
     </ol>
   </main>
 </template>
 
-<script>
-import { mapState } from 'vuex'
-export default {
-  computed: {
-    ...mapState('jobs', ['jobs'])
-  },
-  created() {
-    this.$store.dispatch('jobs/fetchJobs')
-  }
-}
+<script setup>
+import { computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
+import JobListing from './JobListing.vue'
+
+const store = useStore()
+
+const jobs = computed(() => {
+  return store.state.jobs.results
+})
+onMounted(() => {
+  store.dispatch('fetchJobs')
+})
 </script>
