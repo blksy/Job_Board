@@ -1,6 +1,16 @@
 <template>
   <MainNav />
-  <div>Single Job View for job {{ currentJobId }}</div>
+  <section class="job-details">
+    <h1 class="heading">Job {{ currentJobId }} Details</h1>
+    <div class="details">
+      <div class="job-info">
+        <h3>Title</h3>
+        <p>Company</p>
+        <p>Location</p>
+      </div>
+      .ba
+    </div>
+  </section>
 </template>
 
 <script>
