@@ -5,6 +5,18 @@ import UserProfile from '../views/UserProfile.vue'
 import JobResults from '../views/JobResults.vue'
 import JobView from '../views/JobView.vue'
 import Testimonials from '../views/Testimonials.vue'
+import { projectAuth } from '../firebase/config'
+
+//auth guard
+const authGuard = (to, from, next) => {
+  let user = projectAuth.currentUser
+  console.log('current user in authGuard: ', user)
+  if (!user) {
+    next({ name: 'Login/Register' })
+  } else {
+    next()
+  }
+}
 
 const routes = [
   {
@@ -20,7 +32,8 @@ const routes = [
   {
     path: '/profile',
     name: 'UserProfile',
-    component: UserProfile
+    component: UserProfile,
+    beforeEnter: authGuard
   },
   {
     path: '/jobs/results',

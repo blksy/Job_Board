@@ -8,14 +8,30 @@
       <router-link to="/jobs/results"><a href="">Job Search</a></router-link>
       <router-link to="/testimonials"><a href="">Testimonials</a></router-link>
       <router-link to="/profile"><a href="">Profile</a></router-link>
-      <router-link to="/signin"><button>Sign In / Sign Up</button></router-link>
+      <router-link to="/signin"><button v-if="!user">Log in /Sign Up</button></router-link>
+      <button @click="handleClick" v-if="user">Logout</button>
     </div>
   </nav>
 </template>
 
 <script>
+import useLogout from '../composition/useLogout'
+import getUser from '../composition/getUser'
+import { useRouter } from 'vue-router'
 export default {
-  name: 'MainNav'
+  setup() {
+    const { logout } = useLogout()
+    const { user } = getUser()
+    const router = useRouter()
+
+    const handleClick = async () => {
+      await logout()
+      console.log('logged out')
+      router.push({ name: 'Login' })
+    }
+
+    return { handleClick, user }
+  }
 }
 </script>
 

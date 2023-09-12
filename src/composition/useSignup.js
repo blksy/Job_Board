@@ -1,25 +1,32 @@
 import { ref } from 'vue'
 import { projectAuth } from '../firebase/config'
+
 const error = ref(null)
+const isPending = ref(false)
+
 const signup = async (email, password, displayName) => {
   error.value = null
+  isPending.value = true
+
   try {
-    const response = await projectAuth.createUserWithEmailAndPassword(email, password)
-    if (!response) {
-      throw new Error('Could not complete the signup')
+    const res = await projectAuth.createUserWithEmailAndPassword(email, password)
+    if (!res) {
+      throw new Error('Could not complete signup')
     }
-    await response.user.updateProfile({ displayName })
+    await res.user.updateProfile({ displayName })
     error.value = null
-    return response
-    // console.log(response.user)
+    isPending.value = false
+
+    return res
   } catch (err) {
     console.log(err.message)
     error.value = err.message
+    isPending.value = false
   }
 }
 
 const useSignup = () => {
-  return { error, signup }
+  return { error, signup, isPending }
 }
 
 export default useSignup
