@@ -16,9 +16,9 @@ import JobListing from './JobListing.vue'
 const store = useStore()
 
 const jobs = computed(() => {
-  return store.state.jobs.results
+  return store.state.jobs.jobs.results
 })
 onMounted(() => {
-  store.dispatch('fetchJobs')
+  store.dispatch('jobs/fetchJobs')
 })
 </script>
