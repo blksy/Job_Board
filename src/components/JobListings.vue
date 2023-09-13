@@ -18,6 +18,7 @@ const store = useStore()
 const jobs = computed(() => {
   return store.state.jobs.jobs.results
 })
+
 onMounted(() => {
   store.dispatch('jobs/fetchJobs')
 })
