@@ -27,7 +27,7 @@ export default {
     const handleClick = async () => {
       await logout()
       console.log('logged out')
-      router.push({ name: 'Login' })
+      router.push({ name: 'Login/Register' })
     }
 
     return { handleClick, user }
