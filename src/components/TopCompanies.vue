@@ -1,14 +1,14 @@
 <template>
-  <section class="top" id="companies">
+  <section class="top">
     <h1 class="top-title">Top recruiting companies</h1>
     <p class="top-desc">
       Here You can see our top recruiting companies, thier average salary, and current vacancies.
     </p>
     <div class="top-wrapper">
       <div class="top-card">
-        <p class="top-name">{{}}</p>
-        <p class="jobs nuumber">{{ company.count }}</p>
-        <p>Average Salary:{{ company.average_salary }}</p>
+        <p class="top-name">Company: {{}}</p>
+        <p class="jobs nuumber">Available vacancies : {{}}</p>
+        <p>Average Salary:{{}}</p>
       </div>
     </div>
   </section>
