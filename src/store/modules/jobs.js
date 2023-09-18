@@ -2,7 +2,8 @@ import axios from 'axios'
 export default {
   namespaced: true,
   state: {
-    jobs: []
+    jobs: [],
+    currentJob: {}
   },
   actions: {
     async fetchJobs({ commit }) {
@@ -15,11 +16,25 @@ export default {
         alert(error)
         console.log(error)
       }
+    },
+    fetchJobDetails(context, payload) {
+      axios
+        .get(
+          `https://api.adzuna.com/v1/api/jobs/${payload}?app_id=4ccd0d4a&app_key=4ffc409a085cb7488b9c8baa476dfafe`
+        )
+        .then((res) => res.json())
+        .then((data) => {
+          context.commit('SET_JOB', data)
+        })
     }
   },
+
   mutations: {
     SET_JOBS(state, jobs) {
       state.jobs = jobs
+    },
+    SET_JOB(state, job) {
+      state.currentJob = job
     }
   }
 }

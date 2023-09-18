@@ -1,11 +1,10 @@
 import { createStore } from 'vuex'
 import jobs from './modules/jobs'
-import user from './modules/user'
-
+import companies from './modules/companies'
 const store = createStore({
   modules: {
     jobs,
-    user
+    companies
   }
 })
 
