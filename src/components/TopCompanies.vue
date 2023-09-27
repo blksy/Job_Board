@@ -4,20 +4,29 @@
     <p class="top-desc">
       Here You can see our top recruiting companies, thier average salary, and current vacancies.
     </p>
-    <div class="top-wrapper">
-      <div class="top-card">
-        <p class="top-name">Company: {{}}</p>
-        <p class="jobs nuumber">Available vacancies : {{}}</p>
-        <p>Average Salary:{{}}</p>
-      </div>
+    <div class="top-wrapper" v-if="companies.companies">
+      <template v-for="(k, c) in companies.companies" :key="c">
+        <div class="top-card">
+          <p class="top-name">Company: {{ k.canonical_name }}</p>
+          <p class="jobs nuumber">Available vacancies : {{ k.count }}</p>
+          <p>Average Salary:{{ k.average_salary }}</p>
+        </div>
+      </template>
     </div>
   </section>
 </template>
+
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'TopCompanies',
-  props: {
-    company: Object
+  computed: {
+    ...mapState(['companies'])
+  },
+  watch: {
+    getCompanies() {
+      return this.companies.companies
+    }
   }
 }
 </script>
