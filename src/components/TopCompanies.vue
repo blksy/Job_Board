@@ -6,11 +6,12 @@
     </p>
     <div class="top-wrapper" v-if="companies.companies">
       <template v-for="(k, c) in companies.companies" :key="c">
-        <div class="top-card">
-          <p class="top-name">Company: {{ k.canonical_name }}</p>
-          <p class="jobs nuumber">Available vacancies : {{ k.count }}</p>
-          <p>Average Salary:{{ k.average_salary }}</p>
-        </div>
+        <router-link to="/jobs/results">
+          <div class="top-card">
+            <p class="top-name">Company: {{ k.canonical_name }}</p>
+            <p class="jobs nuumber">Available vacancies : {{ k.count }}</p>
+          </div>
+        </router-link>
       </template>
     </div>
   </section>
@@ -31,6 +32,10 @@ export default {
 }
 </script>
 <style scoped>
+a {
+  text-decoration: none;
+  color: black;
+}
 p {
   font-size: 20px;
   font-weight: bold;
@@ -61,9 +66,9 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  height: 120%;
+  height: 130%;
   width: 90%;
-  background-color: greenyellow;
+  background-color: white;
   border: 2px solid;
   border-radius: 10%;
   box-shadow: rgba(0, 0, 0, 0.16) 15px 15px 15px;
